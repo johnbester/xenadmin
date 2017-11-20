@@ -76,6 +76,8 @@ namespace XenAdmin.Commands
 
         protected sealed override void ExecuteCore(SelectedItemCollection selection)
         {
+			// JB: Remove to avoid Linux/Mono error: "Inner exception: Member 'ListViewItemCount' was not found."
+			/*
             ConfirmVMDeleteDialog dialog = new ConfirmVMDeleteDialog(selection.AsXenObjects<VM>());
 
             if (MainWindowCommandInterface.RunInAutomatedTestMode || dialog.ShowDialog(Parent) == DialogResult.Yes)
@@ -101,6 +103,7 @@ namespace XenAdmin.Commands
                     errorDialog.ShowDialog(Parent);
                 }
             }
+            */
         }
 
         protected virtual bool CanExecute(VM vm)

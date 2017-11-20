@@ -36,6 +36,7 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <TargetFrameworkProfile />
+    <StartupObject>XenAdmin.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -83,7 +84,7 @@
       <HintPath>RDP\MSTSCLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -1226,12 +1227,14 @@
     <Compile Include="Controls\ToolTipContainer.Designer.cs">
       <DependentUpon>ToolTipContainer.cs</DependentUpon>
     </Compile>
+    <!-- JB: Remove to avoid Linux/Mono error: "Inner exception: Member 'ListViewItemCount' was not found." -->
     <Compile Include="Dialogs\ConfirmVMDeleteDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dialogs\ConfirmVMDeleteDialog.Designer.cs">
       <DependentUpon>ConfirmVMDeleteDialog.cs</DependentUpon>
     </Compile>
+    <!-- JB: End of remove -->
     <Compile Include="Controls\HelpButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1286,9 +1289,6 @@
     </Compile>
     <Compile Include="Dialogs\XenDialogBase.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\XenDialogBase.designer.cs">
-      <DependentUpon>XenDialogBase.cs</DependentUpon>
     </Compile>
     <Compile Include="LicenseTimer.cs">
       <SubType>Component</SubType>
@@ -2430,10 +2430,12 @@
       <DependentUpon>ToolTipContainer.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <!-- JB: Remove to avoid Linux/Mono error: "Inner exception: Member 'ListViewItemCount' was not found." -->
     <EmbeddedResource Include="Dialogs\ConfirmVMDeleteDialog.resx">
       <DependentUpon>ConfirmVMDeleteDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <!-- JB: End of remove -->
     <EmbeddedResource Include="Controls\HelpButton.resx">
       <SubType>Designer</SubType>
       <DependentUpon>HelpButton.cs</DependentUpon>
@@ -5161,12 +5163,14 @@
     <EmbeddedResource Include="Dialogs\CommandErrorDialog.zh-CN.resx">
       <DependentUpon>CommandErrorDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <!-- JB: Remove to avoid Linux/Mono error: "Inner exception: Member 'ListViewItemCount' was not found." -->
     <EmbeddedResource Include="Dialogs\ConfirmVMDeleteDialog.ja.resx">
       <DependentUpon>ConfirmVMDeleteDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\ConfirmVMDeleteDialog.zh-CN.resx">
       <DependentUpon>ConfirmVMDeleteDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <!-- JB: End of remove -->
     <EmbeddedResource Include="Dialogs\ConnectingToServerDialog.ja.resx">
       <DependentUpon>ConnectingToServerDialog.cs</DependentUpon>
     </EmbeddedResource>
