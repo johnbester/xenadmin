@@ -103,7 +103,7 @@ namespace XenAdmin.Core
 
             DefaultFont =
                 Environment.OSVersion.Platform == PlatformID.Win32Windows || Environment.OSVersion.Version.Major < 5 ?
-                    null : // 95, 98, and NT can't be fixed.
+					SystemFonts.DefaultFont : // 95, 98, and NT can't be fixed.
                 Environment.OSVersion.Version.Major < 6 ?
                     SystemFonts.DialogFont : // 2K (5.0), XP (5.1), 2K3 and XP Pro (5.2), using Tahoma by default
                     SystemFonts.MessageBoxFont; // Vista and above, using SegoeUI by default
